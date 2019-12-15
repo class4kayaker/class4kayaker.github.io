@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="en"><head><title>Jonathan Robey</title><meta charset="utf-8"><link href="https://www.math.ucdavis.edu/~jrobey/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Jonathan Robey Full Atom Feed"><link href="https://www.math.ucdavis.edu/~jrobey/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate" title="Jonathan Robey Categories Atom Feed"><meta http-equiv="Content-Security-Policy" content="script-src 'self' https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/"><meta http-equiv="Content-Security-Policy" content="require-sri-for script style"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" type="text/css" integrity="sha384-aO3lPZPD09+Yve9t+5/LqmlEZSO+6c5M8lQ4i25CcM/T7VVArjlo5KCLg0awBRPz" href="https://www.math.ucdavis.edu/~jrobey/theme/css/style.css?5a2d33"><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-CABIusojVGLXKWOcdRP7wwh3SC7gjAbMmAnii19ZRH6QOsLiM6NIJ7Mb4BjfkQLU" crossorigin="anonymous" async></script></head><body id="index" class="home"><header id="banner" class="body"><h1><a href="https://www.math.ucdavis.edu/~jrobey/">Jonathan Robey <strong></strong></a></h1></header><div id="navigation"><nav id="menu"><h3>Information</h3><ul><li><a href="https://www.math.ucdavis.edu/~jrobey/">About Jonathan Robey</a></li><li><a href="https://www.math.ucdavis.edu/~jrobey/pages/ta-info-en-US.html">TA Information</a></li><li><a href="https://www.math.ucdavis.edu/~jrobey/pages/research-en-US.html">Research</a></li></ul><h3>Posts</h3><ul><li><a href="https://www.math.ucdavis.edu/~jrobey/category/graduate-school.html">Graduate School</a></li><li><a href="https://www.math.ucdavis.edu/~jrobey/category/research.html">Research</a></li><li class="active"><a href="https://www.math.ucdavis.edu/~jrobey/category/teaching.html">Teaching</a></li></ul></nav></div><div id="contentpane"><section id="content" class="body"><header><h2 class="entry-title"><a href="https://www.math.ucdavis.edu/~jrobey/drafts/assignments_latex-en-US.html" rel="bookmark" title="Permalink to Advice on Submitting Assignments in LaTeX">Advice on Submitting Assignments in LaTeX</a></h2></header><footer class="post-info"><time class="published" datetime="2018-09-17T10:00:00-07:00"> Mon 17 September 2018 </time><span class="authors">By Jonathan Robey</span></footer><div class="entry-content"><h2 id="introduction">Introduction</h2><p>LaTeX is a common format/language for typesetting documents. It is one of the most common formats accepted for article submissions by journals in the field of mathematics.</p><p>As such, using it for the write-ups for class assignments both provides practice and the PDF documents produced are reasonable for submission.</p><p>A useful reference for many questions is the <a href="https://en.wikibooks.org/wiki/LaTeX">Wikibook</a>.</p><h2 id="installation">Installation</h2><h3 id="latex">LaTeX</h3><p>If you are using Ubuntu or a Ubuntu derived distribution, a reasonable package to install would be <code>texlive-latex-recommended</code>.</p><h4 id="latexrun">LaTeXrun</h4><p>One of the major issues with LaTeX is that due to a legacy of its development, the program both requires that it be run multiple times to create the actual final document, and the errors it encounters are buried in a large stream of text making it difficult to identify them for correction.</p><p><a href="https://github.com/aclements/latexrun">latexrun</a> is a python script that is intended to solve both of these issues. The script runs the correct pattern of <code>pdflatex</code> and <code>bibtex</code> until there is no change in the source files, isolates the set of files produced as intermediate products, and lists the errors in a much more readable fashion.</p><h2 id="structure">Structure</h2><p>An example latex document is shown below</p><div class="sourceCode" id="cb1"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1"></a><span class="bu">\documentclass</span>{<span class="ex">article</span>}</span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="co">% Use graphics package</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="bu">\usepackage</span>{<span class="ex">graphicx</span>}</span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="co">% Use particular bibliography package</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="bu">\usepackage</span>{<span class="ex">natbib</span>}</span>
+<span id="cb1-8"><a href="#cb1-8"></a></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="co">% Add submission information</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="fu">\title</span>{Submission title}</span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="fu">\date</span>{Todays Date}</span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="fu">\author</span>{Jonathan Robey}</span>
+<span id="cb1-13"><a href="#cb1-13"></a></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb1-15"><a href="#cb1-15"></a></span>
+<span id="cb1-16"><a href="#cb1-16"></a>    <span class="co">% Typeset title</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a>    <span class="fu">\maketitle</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a></span>
+<span id="cb1-19"><a href="#cb1-19"></a>    <span class="co">% Section heading</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a>    <span class="kw">\section</span>{Question 1}</span>
+<span id="cb1-21"><a href="#cb1-21"></a></span>
+<span id="cb1-22"><a href="#cb1-22"></a>    Section text here.</span>
+<span id="cb1-23"><a href="#cb1-23"></a></span>
+<span id="cb1-24"><a href="#cb1-24"></a>    <span class="kw">\subsection</span>{Convergence}</span>
+<span id="cb1-25"><a href="#cb1-25"></a></span>
+<span id="cb1-26"><a href="#cb1-26"></a>    Subsection text</span>
+<span id="cb1-27"><a href="#cb1-27"></a></span>
+<span id="cb1-28"><a href="#cb1-28"></a>    <span class="co">% Figure with caption</span></span>
+<span id="cb1-29"><a href="#cb1-29"></a>    <span class="kw">\begin</span>{<span class="ex">figure</span>}</span>
+<span id="cb1-30"><a href="#cb1-30"></a></span>
+<span id="cb1-31"><a href="#cb1-31"></a>        <span class="bu">\includegraphics</span>[width=<span class="fu">\textwidth</span>]{<span class="ex">FIGURES/convergence_graph</span>}</span>
+<span id="cb1-32"><a href="#cb1-32"></a></span>
+<span id="cb1-33"><a href="#cb1-33"></a>        <span class="fu">\caption</span>{A graph of the convergence rate for Euler&#39;s method}</span>
+<span id="cb1-34"><a href="#cb1-34"></a>        <span class="kw">\label</span>{<span class="ex">fig:convergence_graph</span>}</span>
+<span id="cb1-35"><a href="#cb1-35"></a>    <span class="kw">\end</span>{<span class="ex">figure</span>}</span>
+<span id="cb1-36"><a href="#cb1-36"></a></span>
+<span id="cb1-37"><a href="#cb1-37"></a>    <span class="co">% Table of data</span></span>
+<span id="cb1-38"><a href="#cb1-38"></a>    <span class="kw">\begin</span>{<span class="ex">table</span>}</span>
+<span id="cb1-39"><a href="#cb1-39"></a>        <span class="kw">\begin</span>{<span class="ex">tabular</span>}{|l|r|r|}</span>
+<span id="cb1-40"><a href="#cb1-40"></a>        <span class="ss">$h$</span> <span class="op">&amp;</span> <span class="ss">$E$</span> <span class="op">&amp;</span> Rate <span class="fu">\\</span></span>
+<span id="cb1-41"><a href="#cb1-41"></a>        <span class="fu">\hline</span></span>
+<span id="cb1-42"><a href="#cb1-42"></a>        <span class="ss">$2^{-3}$</span> <span class="op">&amp;</span> <span class="ss">$3.14</span><span class="sc">\cdot</span><span class="ss">10^{-2}$</span> <span class="op">&amp;</span> <span class="fu">\\</span></span>
+<span id="cb1-43"><a href="#cb1-43"></a>        <span class="fu">\vdots</span> <span class="op">&amp;</span> <span class="op">&amp;</span> <span class="fu">\\</span></span>
+<span id="cb1-44"><a href="#cb1-44"></a>        <span class="kw">\end</span>{<span class="ex">tablular</span>}</span>
+<span id="cb1-45"><a href="#cb1-45"></a>    <span class="kw">\end</span>{<span class="ex">table</span>}</span>
+<span id="cb1-46"><a href="#cb1-46"></a></span>
+<span id="cb1-47"><a href="#cb1-47"></a>    <span class="co">% Add bibliography</span></span>
+<span id="cb1-48"><a href="#cb1-48"></a>    <span class="kw">\section*</span>{References}</span>
+<span id="cb1-49"><a href="#cb1-49"></a></span>
+<span id="cb1-50"><a href="#cb1-50"></a>    <span class="bu">\bibliographystyle</span>{<span class="ex">plain</span>}</span>
+<span id="cb1-51"><a href="#cb1-51"></a></span>
+<span id="cb1-52"><a href="#cb1-52"></a>    <span class="bu">\bibliography</span>{<span class="ex">TEXT</span>}</span>
+<span id="cb1-53"><a href="#cb1-53"></a></span>
+<span id="cb1-54"><a href="#cb1-54"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div><h2 id="useful-packages">Useful Packages</h2><p>As LaTeX is extensible, there are a number of useful non-standard packages, which are included in the Ubuntu <code>texlive-latex-recommended</code> package.</p><h3 id="graphicx"><a href="https://ctan.org/pkg/graphicx">Graphicx</a></h3><p>A standard package to improve inclusion of graphics into a LaTeX document.</p><h3 id="natbib"><a href="https://ctan.org/pkg/natbib?lang=en">Natbib</a></h3><p>One of the more modern bibliography typesetting packages</p><h3 id="pgfplotstable"><a href="https://ctan.org/pkg/pgfplotstable">PGFPLOTSTABLE</a></h3><p>In cases such as convergence studies, it is necessary to include a table of calculated data into the document. This can be done manually, but this adds greater potential for including an error when typing in the data, or have difficulties when adding new datapoints. Alternatively, <code>PGFPLOTSTABLE</code> allows the extraction of data from structured CSV files into nicely formatted tables. While this does require that the originating data be arranged correctly this can easily be done in an automated fashion and the ability to both separate out the data into a separate file helps avoid uncertainties in which dataset is currently included.</p></div></section></div><footer id="contentinfo" class="body"><address id="about" class="vcard body"> Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>. </address></footer></body></html>
