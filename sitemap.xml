@@ -18,6 +18,20 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>https://class4kayaker.github.io/lemon-pepper-chicken-en-US.html</loc>
+<lastmod>2020-02-09T00:00:00-08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+
+<url>
+<loc>https://class4kayaker.github.io/rice-pilaf-en-US.html</loc>
+<lastmod>2020-02-09T00:00:00-08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+
+<url>
 <loc>https://class4kayaker.github.io/dissertation-en-US.html</loc>
 <lastmod>2019-09-24T10:00:00-07:00</lastmod>
 <changefreq>monthly</changefreq>
@@ -50,6 +64,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <lastmod>2016-12-23T00:00:00-08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.9</priority>
+</url>
+
+<url>
+<loc>https://class4kayaker.github.io/tags/recipe.html</loc>
+<lastmod>2020-02-09T00:00:00-07:53</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.1</priority>
 </url>
 
 </urlset>
